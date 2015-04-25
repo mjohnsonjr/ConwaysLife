@@ -1,0 +1,19 @@
+Name "Bill Cosby's flibbidy doo dappity puddin pop";
+Xrange -50 50;
+Yrange -25 25;
+Rules BriansBrain;
+Chars 32, 64, 42;
+Colors ( 24, 233, 0 ), (2, 42, 99 ), ( 102, 0, 102 );
+Initial {
+State 2;
+Y = -5 : -4, 0, 4;
+Y = -4 : -3, 0, 3;
+Y = -3 : -2, 0, 2;
+Y = -1 : -2, 0, 2;
+Y = 0 : -2, -1, 1, 2;
+Y = 1 : 0;
+Y = 2 : 0;
+Y = 3 : 0;
+Y = 4 : -3, 0, 3;
+Y = 5 : -4, -2, 0, 2, 4;
+};
