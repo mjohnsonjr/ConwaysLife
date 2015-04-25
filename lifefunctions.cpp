@@ -130,7 +130,7 @@ Board* createBoard(istream& file, int i_txl, int i_txh, int i_tyl, int i_tyh, bo
 			if(errno != 0 || tokenc == endptr || holder < -2147483648 || holder > 2147483647)
 			{
 				cerr << "ERROR! On Xrange conversions. Ensure X range is between INT_MIN and INT_MAX. Aborting.\n";
-				exit(1);
+            //	exit(1);
 			}
 			else lowerXrange = (int)holder;
 
@@ -143,7 +143,7 @@ Board* createBoard(istream& file, int i_txl, int i_txh, int i_tyl, int i_tyh, bo
 			if(errno != 0 || tokenc == endptr || holder < -2147483648 || holder > 2147483647)
 			{
 				cerr << "ERROR! On Xrange conversions. Ensure X range is between INT_MIN and INT_MAX. Aborting.\n";
-				exit(1);
+        //		exit(1);
 			}
 			else upperXrange = (int)holder;
 
@@ -167,7 +167,7 @@ Board* createBoard(istream& file, int i_txl, int i_txh, int i_tyl, int i_tyh, bo
 			if(errno != 0 || tokenc == endptr || holder < -2147483648 || holder > 2147483647)
 			{
 				cerr << "ERROR! On Yrange conversions. Ensure Y range is between INT_MIN and INT_MAX. Aborting.\n";
-				exit(1);
+        //		exit(1);
 			}
 			else lowerYrange = (int)holder;
 
@@ -180,7 +180,7 @@ Board* createBoard(istream& file, int i_txl, int i_txh, int i_tyl, int i_tyh, bo
 			if(errno != 0 || tokenc == endptr || holder < -2147483648 || holder > 2147483647)
 			{
 				cerr << "ERROR! On Yrange conversions. Ensure Y range is between INT_MIN and INT_MAX. Aborting.\n";
-				exit(1);
+        //		exit(1);
 			}
 			else upperYrange = (int)holder;
 			

@@ -4,7 +4,9 @@
 #include "../life.h"
 #include "globals.h"
 #include <cstdlib>
-#include <unistd.h>
+/*#include <unistd.h> Use this on unix, and modify sleep. */
+/*This should be something more cross platform in the future. */
+#include <Windows.h>
 
 /* This form, Dialog, is the controls menu that displays and has user controls for sim-gui.
  All of the Slots contained in Dialog are described below */
@@ -64,7 +66,8 @@ void Dialog::on_PlayPauseButton_clicked()
         /* Allows user input between generations in Play/pause mode. */
         for(i = 0; i < delay; i+=10)
         {
-            usleep(9000);
+            //usleep(9000);
+            Sleep(9);
             a->processEvents();
         }
 

@@ -8,7 +8,8 @@ DEPENDPATH += . .. ..
 INCLUDEPATH += . ..
 
 # Input
-HEADERS += dialog.h globals.h grid.h mainwindow.h ../life.h
+HEADERS += dialog.h globals.h grid.h mainwindow.h ../life.h \
+    unistd.h
 FORMS += dialog.ui grid.ui mainwindow.ui
 SOURCES += dialog.cpp \
            grid.cpp \
@@ -16,3 +17,4 @@ SOURCES += dialog.cpp \
            sim-gui.cpp \
            ../lifefunctions.cpp \
            ../lifeclasses.cpp
+QT += widgets

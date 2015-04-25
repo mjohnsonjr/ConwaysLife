@@ -85,7 +85,7 @@ class Board
 
 	private:
 		int lowerX, upperX, lowerY, upperY;
-		string simulationname;
+        string simulationname;
 		char gametype;
 		char* chars;
 		unsigned char** colors;

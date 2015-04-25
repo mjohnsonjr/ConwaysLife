@@ -10,15 +10,15 @@
 #define UI_DIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QDialog>
-#include <QtGui/QHeaderView>
-#include <QtGui/QLabel>
-#include <QtGui/QPushButton>
-#include <QtGui/QSlider>
-#include <QtGui/QSpinBox>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QSlider>
+#include <QtWidgets/QSpinBox>
 
 QT_BEGIN_NAMESPACE
 
@@ -113,14 +113,14 @@ public:
 
     void retranslateUi(QDialog *Dialog)
     {
-        Dialog->setWindowTitle(QApplication::translate("Dialog", "Dialog", 0, QApplication::UnicodeUTF8));
-        QuitButton->setText(QApplication::translate("Dialog", "Quit", 0, QApplication::UnicodeUTF8));
-        PlayPauseButton->setText(QApplication::translate("Dialog", "Play/Pause", 0, QApplication::UnicodeUTF8));
-        StepButton->setText(QApplication::translate("Dialog", "Step", 0, QApplication::UnicodeUTF8));
-        Zoom->setText(QApplication::translate("Dialog", "Zoom Factor:", 0, QApplication::UnicodeUTF8));
-        Delay->setText(QApplication::translate("Dialog", "Delay (ms):", 0, QApplication::UnicodeUTF8));
-        GenLabel->setText(QApplication::translate("Dialog", "Generation:", 0, QApplication::UnicodeUTF8));
-        GenCounter->setText(QApplication::translate("Dialog", "0", 0, QApplication::UnicodeUTF8));
+        Dialog->setWindowTitle(QApplication::translate("Dialog", "Dialog", 0, 0));
+        QuitButton->setText(QApplication::translate("Dialog", "Quit", 0, 0));
+        PlayPauseButton->setText(QApplication::translate("Dialog", "Play/Pause", 0, 0));
+        StepButton->setText(QApplication::translate("Dialog", "Step", 0, 0));
+        Zoom->setText(QApplication::translate("Dialog", "Zoom Factor:", 0, 0));
+        Delay->setText(QApplication::translate("Dialog", "Delay (ms):", 0, 0));
+        GenLabel->setText(QApplication::translate("Dialog", "Generation:", 0, 0));
+        GenCounter->setText(QApplication::translate("Dialog", "0", 0, 0));
     } // retranslateUi
 
 };

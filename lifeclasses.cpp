@@ -458,7 +458,7 @@ bool Board::createAut()
 	cout << "# Generation created by Michael Johnson's 229 Project 2\n#\n\n";
 
 	/* Add Keywords and corresponding values */
-	cout << "Name \"" << simulationname << "\";\n\n";
+    cout << "Name \"" << simulationname.c_str() << "\";\n\n";
 	cout << "Xrange " << lowerXrange() << " " << upperXrange() << ";\n\n";
 	cout << "Yrange " << lowerYrange() << " " << upperYrange() << ";\n\n";
 	
