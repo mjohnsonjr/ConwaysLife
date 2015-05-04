@@ -80,6 +80,7 @@ public:
 	int getLowerYRange();
 	int getUpperXRange();
 	int getUpperYRange();
+	uint8_t getGameType();
 
 
 private:
@@ -88,7 +89,7 @@ private:
 	uint8_t characters[NUM_STATES];/* characters */
 	uint8_t colors[NUM_STATES][NUM_COLORS];/* colors */
 	cartesian_range terrain;
-	const uint8_t num_states;
+	uint8_t num_states;
 
 };
 

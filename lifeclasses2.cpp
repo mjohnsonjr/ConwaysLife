@@ -31,13 +31,13 @@ void Board::generateAut( std::ostream& output ) {
 
 	/* Add Keywords and corresponding values */
 	output << "Name \"" << this->name << "\";\n\n";
-	output << "Xrange " << this->preferences.terrain.l_x << " "
-			<< this->preferences.terrain.u_x << ";\n\n";
-	output << "Yrange " << this->preferences.terrain.l_y << " "
-			<< this->preferences.terrain.u_y << ";\n\n";
+	output << "Xrange " << this->preferences.getLowerXRange() << " "
+			<< this->preferences.getUpperXRange() << ";\n\n";
+	output << "Yrange " << this->preferences.getLowerYRange() << " "
+			<< this->preferences.getUpperYRange() << ";\n\n";
 
 	/* Specify game_type */
-	switch(this->preferences.gametype){
+	switch( this->preferences.getGameType() ){
 		case CONWAYS_LIFE:
 			output << "Rules ConwaysLife;\n\n";
 			break;
@@ -56,7 +56,7 @@ void Board::generateAut( std::ostream& output ) {
 	output << "Chars ";
 	for( uint8_t i = 0; i < this->preferences.getNumStates(); i++) {
 		output << this->preferences.getCharacters()[i];
-		output << ( ( i + 1 ) != this->preferences.getNumStates() ) ? ";\n\n" : "";
+		output << ( ( ( i + 1 ) != this->preferences.getNumStates() ) ? ";\n\n" : "" );
 	}
 
 	/* Specify state colors */
@@ -65,7 +65,7 @@ void Board::generateAut( std::ostream& output ) {
 		output << "(" << this->preferences.getColors()[i][COLOR_RED] << ", "
 			   << this->preferences.getColors()[i][COLOR_GREEN] << ", "
 			   << this->preferences.getColors()[i][COLOR_BLUE] << ")";
-		output << ( ( i + 1 ) != this->preferences.getNumStates() ) ? ";\n\n" : ")";
+		output << ( ( ( i + 1 ) != this->preferences.getNumStates() ) ? ";\n\n" : ")" );
 	}
 
 	/* Keywords done, now add data TODO: Clean this up a bit. */
@@ -205,4 +205,8 @@ int board_preferences::getUpperXRange() {
 
 int board_preferences::getUpperYRange() {
 	return this->terrain.u_y;
+}
+
+uint8_t board_preferences::getGameType() {
+	return this->gametype;
 }
