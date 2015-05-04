@@ -1,6 +1,6 @@
 #ifndef BOARD
 #define BOARD
-
+#if 0
 using namespace std;
 
 /* This class is a single cell contained in a board, the cell has a couple of methods to change its state, including:

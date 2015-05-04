@@ -53,9 +53,23 @@ enum{
 	NUM_STATES
 };
 
+typedef struct {
+	int x;
+	int y;
+
+} cartesian;
+
+typedef struct {
+	int l_x;
+	int l_y;
+	int u_x;
+	int u_y;
+
+} cartesian_range;
+
 class board_preferences {
 public:
-	board_preferences( std::string& _name, game_type _gametype, cartesian_range _terrain );
+	board_preferences( std::string _name, game_type _gametype, cartesian_range _terrain );
 	~board_preferences();
 	uint8_t getNumStates();
 	uint8_t* getCharacters();
@@ -78,23 +92,23 @@ private:
 
 };
 
-typedef struct {
-	int x;
-	int y;
-
-} cartesian;
-
-typedef struct {
-	int l_x;
-	int l_y;
-	int u_x;
-	int u_y;
-
-} cartesian_range;
-
 /*----------------------------------------------------------
                          CLASSES
 ----------------------------------------------------------*/
+class Cell {                 /* Cell object type */
+
+public:
+	Cell( uint8_t _state ); /* Constructor */
+	virtual ~Cell(); /* Destructor */
+
+	/* Methods */
+	uint8_t getState();
+	void setState( uint8_t _state );
+
+private:
+	uint8_t state;
+};
+
 class Board {                /* board object type */
 
 private:
@@ -110,24 +124,9 @@ public:
 	void generateASCII( std::ostream& output, cartesian_range& window );
 };
 
-class Cell {                 /* Cell object type */
-
-public:
-	Cell( uint8_t _state ); /* Constructor */
-	virtual ~Cell(); /* Destructor */
-
-	/* Methods */
-	uint8_t getState();
-	void setState( uint8_t _state );
-
-private:
-	uint8_t state;
-};
-
 /*----------------------------------------------------------
                         PROCEDURES
 ----------------------------------------------------------*/
-
 
 
 #endif /* LIFE2_HPP_ */

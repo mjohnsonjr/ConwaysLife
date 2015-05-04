@@ -10,8 +10,7 @@
 /*----------------------------------------------------------
              BOARD CONNSTRUCTORS/DESTRUCTORS
 ----------------------------------------------------------*/
-Board::Board(board_preferences& _preferences) {
-	this->preferences = _preferences;
+Board::Board( board_preferences& _preferences ) : preferences( _preferences ) {
 
 }
 
@@ -148,7 +147,7 @@ void Cell::setState( uint8_t _state ) {
 /*----------------------------------------------------------
            BOARD PREFS CONNSTRUCTORS/DESTRUCTORS
 ----------------------------------------------------------*/
-board_preferences::board_preferences( std::string& _name, game_type _gametype, cartesian_range _terrain ) {
+board_preferences::board_preferences( std::string _name, game_type _gametype, cartesian_range _terrain ) {
 	this->name = _name;
 	this->gametype = _gametype;
 	this->terrain = _terrain;
