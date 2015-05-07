@@ -67,13 +67,20 @@ typedef struct {
 
 } cartesian_range;
 
+typedef struct {
+	uint8_t red[ NUM_STATES ];
+	uint8_t green[ NUM_STATES ];
+	uint8_t blue[ NUM_STATES ];
+
+} color_type;
+
 class board_preferences {
 public:
 	board_preferences( std::string _name, game_type _gametype, cartesian_range _terrain );
 	~board_preferences();
 	uint8_t getNumStates();
 	uint8_t* getCharacters();
-	uint8_t** getColors();
+	color_type& getColors();
 	uint32_t getHeight();
 	uint32_t getWidth();
 	int getLowerXRange();
@@ -84,10 +91,10 @@ public:
 
 
 private:
-	std::string& name; /* simulation name */
+	std::string name; /* simulation name */
 	game_type gametype;  /* gametype */
 	uint8_t characters[NUM_STATES];/* characters */
-	uint8_t colors[NUM_STATES][NUM_COLORS];/* colors */
+	color_type colors;/* colors */
 	cartesian_range terrain;
 	uint8_t num_states;
 
@@ -115,7 +122,7 @@ class Board {                /* board object type */
 private:
 	std::string name;
 	board_preferences preferences;
-	std::vector<std::vector<Cell>> cells;
+	std::vector< std::vector< Cell > > cells;
 
 public:
 	Board( board_preferences& _preferences );

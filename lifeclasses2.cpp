@@ -62,9 +62,9 @@ void Board::generateAut( std::ostream& output ) {
 	/* Specify state colors */
 	output << "Colors ";
 	for( uint8_t i = 0; i < this->preferences.getNumStates(); i++) {
-		output << "(" << this->preferences.getColors()[i][COLOR_RED] << ", "
-			   << this->preferences.getColors()[i][COLOR_GREEN] << ", "
-			   << this->preferences.getColors()[i][COLOR_BLUE] << ")";
+		output << "(" << this->preferences.getColors().red[i] << ", "
+			   << this->preferences.getColors().green[i] << ", "
+			   << this->preferences.getColors().blue[i] << ")";
 		output << ( ( ( i + 1 ) != this->preferences.getNumStates() ) ? ";\n\n" : ")" );
 	}
 
@@ -122,7 +122,7 @@ void Board::generateASCII( std::ostream& output, cartesian_range& window ) {
 /*----------------------------------------------------------
               CELL CONSTRUCTORS/DESTRUCTORS
 ----------------------------------------------------------*/
-Cell::Cell(uint8_t _state) {
+Cell::Cell( uint8_t _state ) {
 	this->state = _state;
 
 }
@@ -179,7 +179,7 @@ uint8_t* board_preferences::getCharacters() {
 	return this->characters;
 }
 
-uint8_t** board_preferences::getColors() {
+color_type& board_preferences::getColors() {
 	return this->colors;
 }
 

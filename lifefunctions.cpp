@@ -6,7 +6,7 @@
 #include <cerrno>
 #include <algorithm>
 #include <cstdlib>
-#include "life.h"
+#include "life2.hpp"
 
 
 using namespace std;

@@ -5,7 +5,7 @@
 #include <string>
 #include <cstring>
 #include <cstdlib> 
-#include "life.h"
+#include "life2.hpp"
 
 
 /* This program reads a .aut file passed as an argument, and generates to gen N (see -g switch) according 

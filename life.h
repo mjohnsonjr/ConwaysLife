@@ -98,3 +98,4 @@ Board* createBoard(istream& file, int i_txl, int i_txh, int i_tyl, int i_tyh, bo
 
 
 #endif
+#endif
